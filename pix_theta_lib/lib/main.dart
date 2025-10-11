@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'pages/connectivity_page.dart';
+import 'pages/shooting_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,74 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
           NavigationDestination(icon: Icon(Icons.camera_alt), label: '撮影'),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class ConnectivityPage extends StatelessWidget {
-  const ConnectivityPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.wifi_tethering, size: 80, color: Colors.blueGrey),
-            const SizedBox(height: 24),
-            const Text(
-              'RICOH THETAとの疎通確認',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 40),
-            FilledButton.icon(
-              onPressed: () {
-                // ここに疎通確認処理を後で追加
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(const SnackBar(content: Text('疎通確認ボタンが押されました')));
-              },
-              icon: const Icon(Icons.wifi),
-              label: const Text('疎通確認を実行'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class ShootingPage extends StatelessWidget {
-  const ShootingPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.camera_alt, size: 80, color: Colors.deepPurple),
-            const SizedBox(height: 24),
-            const Text(
-              'THETAで撮影',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 40),
-            FilledButton.icon(
-              onPressed: () {
-                // ここに撮影処理を後で追加
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(const SnackBar(content: Text('撮影ボタンが押されました')));
-              },
-              icon: const Icon(Icons.camera),
-              label: const Text('撮影する'),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

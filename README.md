@@ -70,8 +70,6 @@ cd pix_theta_lib
 fvm flutter run
 ```
 
-### Step 3: 初回起動確認
-
 * FVMを使っている場合、IDEが正しいSDKを認識するよう設定します。
 * VSCode では .vscode/settings.json に以下を追加してください。
 
@@ -80,3 +78,19 @@ fvm flutter run
   "dart.flutterSdkPath": ".fvm/flutter_sdk"
 }
 ```
+
+---
+
+## 3. 実機確認
+
+```bash
+# デバイス確認
+fvm flutter devices
+
+# 起動
+fvm flutter run --profile -d <device id>
+```
+
+* 実機ではDebugモードでの実行不可のためProfileモードで起動
+
+---
