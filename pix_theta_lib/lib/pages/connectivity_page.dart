@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/theta_api_digest_auth.dart';
+import 'package:pix_theta_utils/pix_theta_utils.dart';
 
 class ConnectivityPage extends StatefulWidget {
   const ConnectivityPage({super.key});
@@ -10,7 +10,7 @@ class ConnectivityPage extends StatefulWidget {
 
 class _ConnectivityPageState extends State<ConnectivityPage> {
   final _ipCtrl = TextEditingController(text: 'XXX'); // デフォルト
-  late ThetaApi _api;
+  late ThetaDigestAuthApi _api;
   bool _loading = false;
   String? _model;
   String? _firmware;
@@ -20,7 +20,11 @@ class _ConnectivityPageState extends State<ConnectivityPage> {
   @override
   void initState() {
     super.initState();
-    _api = ThetaApi(host: _ipCtrl.text.trim(), user: 'XXX', password: 'XXX');
+    _api = ThetaDigestAuthApi(
+      host: _ipCtrl.text.trim(),
+      user: 'XXX',
+      password: 'XXX',
+    );
   }
 
   @override

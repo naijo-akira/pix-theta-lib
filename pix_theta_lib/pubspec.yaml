@@ -32,6 +32,8 @@ dependencies:
     sdk: flutter
   http: ^1.5.0
   http_auth: ^1.0.4
+  pix_theta_utils:
+    path: ../pix_theta_utils
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

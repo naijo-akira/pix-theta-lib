@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http; // 型だけ使う（close等）
 import 'package:http_auth/http_auth.dart' as http_auth;
 
-class ThetaApi {
-  ThetaApi({
+class ThetaDigestAuthApi {
+  ThetaDigestAuthApi({
     String host = 'XXX',
     required String user,
     required String password,

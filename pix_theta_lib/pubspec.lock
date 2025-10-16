@@ -179,6 +179,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  pix_theta_utils:
+    dependency: "direct main"
+    description:
+      path: "../pix_theta_utils"
+      relative: true
+    source: path
+    version: "1.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/theta_api_digest_auth.dart';
+import 'package:pix_theta_utils/pix_theta_utils.dart';
 
 class ShootingPage extends StatefulWidget {
   const ShootingPage({super.key});
@@ -10,7 +10,7 @@ class ShootingPage extends StatefulWidget {
 
 class _ShootingPageState extends State<ShootingPage> {
   final _ipCtrl = TextEditingController(text: 'XXX'); // デフォルトIP
-  late ThetaApi _api;
+  late ThetaDigestAuthApi _api;
   bool _shooting = false;
   String? _fileUrl; // 撮影結果のURL（返ってくれば表示）
   String? _message; // 補足メッセージ（stateやidなど）
@@ -19,7 +19,11 @@ class _ShootingPageState extends State<ShootingPage> {
   @override
   void initState() {
     super.initState();
-    _api = ThetaApi(host: _ipCtrl.text.trim(), user: 'XXX', password: 'XXX');
+    _api = ThetaDigestAuthApi(
+      host: _ipCtrl.text.trim(),
+      user: 'XXX',
+      password: 'XXX',
+    );
   }
 
   @override
