@@ -2,8 +2,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import 'config.dart';
+
 class ThetaApi {
-  ThetaApi({String host = 'XXX'}) : baseUrl = 'http://$host/osc';
+  ThetaApi({String? host})
+    : baseUrl = 'http://${host ?? thetaConfig.hostName}/osc';
   String baseUrl;
 
   Uri get _info => Uri.parse('$baseUrl/info');

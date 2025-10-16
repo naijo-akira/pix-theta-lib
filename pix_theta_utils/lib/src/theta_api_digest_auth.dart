@@ -3,16 +3,15 @@ import 'dart:convert';
 import 'package:http/http.dart' as http; // 型だけ使う（close等）
 import 'package:http_auth/http_auth.dart' as http_auth;
 
-class ThetaDigestAuthApi {
-  ThetaDigestAuthApi({
-    String host = 'XXX',
-    required String user,
-    required String password,
-  }) : _host = host,
-       _user = user,
-       _password = password,
-       baseUrl = 'http://$host/osc',
-       _client = http_auth.DigestAuthClient(user, password);
+import 'config.dart';
+
+class ThetaApiDigestAuth {
+  ThetaApiDigestAuth({String? host, String? user, String? password})
+    : _host = host ?? thetaConfig.hostName,
+      _user = user ?? thetaConfig.username,
+      _password = password ?? thetaConfig.password,
+      baseUrl = 'http://${host ?? thetaConfig.hostName}/osc',
+      _client = http_auth.DigestAuthClient(user ?? '', password ?? '');
 
   String baseUrl;
   String _host;

@@ -9,8 +9,8 @@ class ConnectivityPage extends StatefulWidget {
 }
 
 class _ConnectivityPageState extends State<ConnectivityPage> {
-  final _ipCtrl = TextEditingController(text: 'XXX'); // デフォルト
-  late ThetaDigestAuthApi _api;
+  final _ipCtrl = TextEditingController(text: thetaConfig.hostName); // デフォルト
+  late ThetaApiDigestAuth _api;
   bool _loading = false;
   String? _model;
   String? _firmware;
@@ -20,11 +20,7 @@ class _ConnectivityPageState extends State<ConnectivityPage> {
   @override
   void initState() {
     super.initState();
-    _api = ThetaDigestAuthApi(
-      host: _ipCtrl.text.trim(),
-      user: 'XXX',
-      password: 'XXX',
-    );
+    _api = ThetaApiDigestAuth();
   }
 
   @override

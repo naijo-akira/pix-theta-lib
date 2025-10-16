@@ -9,8 +9,8 @@ class ShootingPage extends StatefulWidget {
 }
 
 class _ShootingPageState extends State<ShootingPage> {
-  final _ipCtrl = TextEditingController(text: 'XXX'); // デフォルトIP
-  late ThetaDigestAuthApi _api;
+  final _ipCtrl = TextEditingController(text: thetaConfig.hostName); // デフォルトIP
+  late ThetaApiDigestAuth _api;
   bool _shooting = false;
   String? _fileUrl; // 撮影結果のURL（返ってくれば表示）
   String? _message; // 補足メッセージ（stateやidなど）
@@ -19,7 +19,7 @@ class _ShootingPageState extends State<ShootingPage> {
   @override
   void initState() {
     super.initState();
-    _api = ThetaDigestAuthApi(
+    _api = ThetaApiDigestAuth(
       host: _ipCtrl.text.trim(),
       user: 'XXX',
       password: 'XXX',

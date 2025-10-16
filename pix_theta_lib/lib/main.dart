@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'pages/connectivity_page.dart';
 import 'pages/shooting_page.dart';
 
-void main() {
+import 'package:pix_theta_utils/pix_theta_utils.dart';
+
+Future<void> main() async {
+  await dotenv.load(fileName: '.env');
+  initThetaConfig(
+    ThetaConfig(
+      hostName: dotenv.env['HOST_NAME'] ?? '',
+      username: dotenv.env['USERNAME'] ?? '',
+      password: dotenv.env['PASSWORD'] ?? '',
+    ),
+  );
   runApp(const MyApp());
 }
 
