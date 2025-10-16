@@ -19,11 +19,7 @@ class _ShootingPageState extends State<ShootingPage> {
   @override
   void initState() {
     super.initState();
-    _api = ThetaApiDigestAuth(
-      host: _ipCtrl.text.trim(),
-      user: 'XXX',
-      password: 'XXX',
-    );
+    _api = ThetaApiDigestAuth();
   }
 
   @override
